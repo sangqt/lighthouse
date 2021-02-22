@@ -7,17 +7,23 @@ random.shuffle(hole_sizes)
 # hole sizes in mm
 average_size = 0
 total = 0.0
-tmp = 0.0
+min_size = 100
+max_size = 0
 for i in hole_sizes:
     average_size = average_size + i
+    if min_size > i:
+        min_size = i
+    if max_size < i:
+        max_size = i
     if i < 20:
-        tmp = 1.3
+        total += 1.3
     elif i < 70:
-        tmp = 1.6
+        total += 1.6
     else:
-        tmp = 2.1
-    total = total + tmp
+        total += 2.1
 
-print(average_size / 100)
-print(total / 100)
-print(total)
+print(f'Average hole size is {average_size / 100:.2f}')
+print( f'Average hole repair cost is {total / 100:.3f}')
+print(f'Total hole repair code is {total:.2f}')
+print(f'max hole size is {max_size}')
+print(f'min hole size is {min_size}')
