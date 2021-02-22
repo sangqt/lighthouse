@@ -1,3 +1,4 @@
+
 # Cleaning Supplies List (19 items)
 cleaningsupplies_list = ['Broom', 'Mop', 'Dustpan', 'Garbage Bags', 'Glass Cleaner', 'Vinegar',
                          'Soap', 'Bleach', 'Duster', 'Floor Cleaner', 'Sponges', 'Dish Soap',
@@ -14,6 +15,7 @@ country_price = [5.49, 4.69, 4.42, 5.99, 5.99, 2.50,
                  1.25, 2.49, 4.50, 6.75, 2.49, 1.99,
                  6.25, 3.99, 3.59, 4.99, 1.69, 1.87, 10.99]
 
+# list of items that are too expensive for Dot to purchase at the nearby store
 for i in range(len(cleaningsupplies_list)):
-    if (city_price[i] > country_price[i] * 1.1):
+    if country_price[i] > city_price[i] * 1.1:
         print(cleaningsupplies_list[i])
